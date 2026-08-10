@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 280px;
+      padding: 12px;
+      margin: 0;
+      background: #181825;
+      color: #cdd6f4;
+      font-family: monospace;
+      font-size: 12px;
+    }
+    h3 { margin: 0 0 10px 0; color: #89b4fa; font-size: 14px; border-bottom: 1px solid #45475a; padding-bottom: 4px; }
+    .section { margin-bottom: 12px; }
+    .row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    input[type="number"], input[type="color"] {
+      background: #313244;
+      border: 1px solid #45475a;
+      color: #fff;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    input[type="number"] { width: 50px; }
+    .sub-option { margin-left: 16px; margin-top: 6px; opacity: 0.8; }
+    .sub-option.disabled { opacity: 0.3; pointer-events: none; }
+    button {
+      width: 100%;
+      background: #89b4fa;
+      color: #11111b;
+      border: none;
+      padding: 8px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    button:hover { background: #b4befe; }
+  </style>
+</head>
+<body>
+  <h3>🔍 VisorDOM Opciones</h3>
+
+  <div class="section">
+    <div class="row">
+      <label for="visorActive">Estado del Visor:</label>
+      <input type="checkbox" id="visorActive" checked>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="row">
+      <label for="fontSize">Tamaño Fuente (px):</label>
+      <input type="number" id="fontSize" value="11" min="8" max="24">
+    </div>
+    <div class="row">
+      <label for="accentColor">Color de Acento:</label>
+      <input type="color" id="accentColor" value="#89b4fa">
+    </div>
+  </div>
+
+  <div class="section" style="border-top: 1px solid #45475a; padding-top: 8px;">
+    <div>
+      <input type="checkbox" id="scanParent" checked>
+      <label for="scanParent">Escaneo Contenedor Padre</label>
+    </div>
+    <div id="debounceContainer" class="sub-option row">
+      <label for="debounceMs">Demora (ms):</label>
+      <input type="number" id="debounceMs" value="150" min="50" max="2000" step="50">
+    </div>
+  </div>
+
+  <button id="btnSave">APLICAR CAMBIOS</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>

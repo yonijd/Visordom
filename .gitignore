@@ -1,0 +1,10 @@
+# Archivos de sistema y temporales
+.DS_Store
+Thumbs.db
+
+# Logs de entorno
+*.log
+
+# Carpetas de configuración local de IDEs
+.vscode/
+.idea/
